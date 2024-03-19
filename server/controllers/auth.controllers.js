@@ -21,12 +21,18 @@ export const signup = async (req, res) => {
     const salt = await bcrypt.genSalt (10);
     const hashPassword = await bcrypt.hash (password, salt);
 
+    // https://avatar-placeholder.iran.liara.run/
+
+		const boyProfilePic = `https://avatar.iran.liara.run/public/boy?username=${userName}`;
+		const girlProfilePic = `https://avatar.iran.liara.run/public/girl?username=${userName}`;
+
+
     const newUser = new User ({
       fullName,
       userName,
       password: hashPassword,
       gender,
-      // pic
+      profilePic: gender === "male" ? boyProfilePic : girlProfilePic,
     });
 
     if (newUser) {
@@ -37,7 +43,7 @@ export const signup = async (req, res) => {
         _id: newUser._id,
         fullName: newUser.fullName,
         userName: newUser.userName,
-        // pic
+        profilePic: newUser.profilePic
       });
     } else {
       res.status (400).json ({error: 'invalid user data'});
@@ -65,10 +71,10 @@ export const login = async (req, res) => {
       _id:user._id,
       fullName:user.fullName,
       userName:user.userName,
-      //pic
+      profilePic: newUser.profilePic
     })
   } catch (error) {
-    console.log ('error in login controller');
+    console.log ('error in login controller',error.message);
     res.status(500).json({error:"internal server error"})
   }
 };
