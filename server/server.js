@@ -2,22 +2,20 @@ import express from 'express';
 import 'colors';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
-import cors from 'cors';
 
 import authRoutes from './routes/auth.route.js';
 import messageRoutes from './routes/message.route.js';
 import userRoutes from './routes/user.route.js';
 
 import connectToMongoDB from './db/connectToMongoDB.js';
+import {app, server} from './socket/socket.js';
 
-const app = express ();
 const PORT = process.env.PORT || 5000;
 
 dotenv.config ();
 
 //middle
 app.use (express.json ());
-app.use (cors ());
 app.use (cookieParser ());
 
 //database config
@@ -34,6 +32,6 @@ app.get ('/', (req, res) => {
 });
 
 //port
-app.listen (PORT, () =>
+server.listen (PORT, () =>
   console.log (`server running on port ${PORT}`.bgGreen.black)
 );
