@@ -1,10 +1,11 @@
-import axios from 'axios';
+// import axios from 'axios';
 import {useState} from 'react';
 import toast from 'react-hot-toast';
-import {useNavigate} from 'react-router-dom';
+// import {useNavigate} from 'react-router-dom';
 import {useAuthContext} from '../context/AuthContext';
 
 const useSignup = () => {
+  //eslint-disable-next-line
   const {authUser, setAuthUser} = useAuthContext ();
   const [loading, setLoading] = useState (false);
   const signup = async ({

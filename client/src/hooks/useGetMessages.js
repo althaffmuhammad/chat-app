@@ -21,6 +21,7 @@ const useGetMessages = () => {
       }
     };
     if (selectedConversation?._id) getMessages()
+    //eslint-disable-next-line
   }, [selectedConversation?._id]);
   return{messages,loading}
 };

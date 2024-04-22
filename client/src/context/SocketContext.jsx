@@ -3,7 +3,7 @@ import { useAuthContext } from "./AuthContext";
 import io from "socket.io-client";
 
 const SocketContext = createContext();
-
+//eslint-disable-next-line
 export const useSocketContext = () => {
 	return useContext(SocketContext);
 };
@@ -35,6 +35,7 @@ export const SocketContextProvider = ({ children }) => {
 				setSocket(null);
 			}
 		}
+		//eslint-disable-next-line
 	}, [authUser]);
 
 	return <SocketContext.Provider value={{ socket, onlineUsers }}>{children}</SocketContext.Provider>;
