@@ -26,14 +26,6 @@ const Messages = () => {
 				))}
 			{loading ?<MessageSkeleton />:null}
 	</div>
-	// <div className='px-4 flex-1 overflow-auto'>
-	// 		{messages&&messages.map((message) => (
-	// 				<div key={message._id}ref={lastMessageRef}>
-	// 					<Message message={message} />
-	// 				</div>			
-	// 			))}
-	// 		{loading ?<MessageSkeleton />:null}
-	// </div>
 
   )
 }

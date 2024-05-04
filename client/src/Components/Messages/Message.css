@@ -24,7 +24,7 @@
   overflow: auto;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 700px) {
   .MessageContainer {
     display: flex;
     flex-direction: column;
