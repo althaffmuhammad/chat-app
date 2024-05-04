@@ -3,6 +3,7 @@ import { IoSearchSharp } from "react-icons/io5";
 import useConverstion from "../../zustand/useConversation";
 import useGetCoversation from "../../hooks/useGetCoversation";
 import toast from "react-hot-toast";
+import './Sidebar.css'
 
 const SearchInput = () => {
 	const [search, setSearch] = useState("");
@@ -24,12 +25,12 @@ const SearchInput = () => {
 		} else toast.error("No such user found!");
 	};
   return (
-		<form className='flex items-center gap-2' onSubmit={handleSubmit}>
-			<input type='text' placeholder='Search…' className='input input-bordered rounded-full'
+		<form className='sidebar-from' onSubmit={handleSubmit}>
+			<input type='text' placeholder='Search…' className='sidebar-form-input'
 			value={search} onChange={(e)=>setSearch(e.target.value)}/>
-			<button type='submit' className='btn btn-circle bg-fuchsia-500 text-white'>
-				<IoSearchSharp className='w-6 h-6 outline-none' />
-			</button>
+			<button type='submit' className='sidebar-form-btn'>
+				<IoSearchSharp className='sidebar-form-icon' />
+			</button>	
 		</form>
   )
 }

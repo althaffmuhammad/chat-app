@@ -1,12 +1,13 @@
 import useGetCoversation from "../../hooks/useGetCoversation"
 import { getRandomEmoji } from "../../utils/emojis"
 import Conversation from "./Conversation"
+import './Sidebar.css'
 
 
 const Conversations = () => {
 	const {loading, conversation}=useGetCoversation()
   return (
-		<div className='py-2 flex flex-col overflow-auto'>
+		<div className='Conversations-main'>
 			{conversation.map((con,idx)=>(
 				<Conversation key={con._id} conversation={con} emoji={getRandomEmoji()} lastIdx={idx===conversation.length-1}/>
 			))}
