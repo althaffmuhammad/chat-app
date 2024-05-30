@@ -10,7 +10,7 @@ const Message = ({message}) => {
 	const formattedTime = extractTime(message.createdAt);
 	const chatClassName = fromMe ? "chat-end" : "chat-start";
 	const profilePic = fromMe ? authUser.profilePic : selectedConversation?.profilePic;
-	const bubbleBgColor = fromMe ? "bg-fuchsia-500" : "";
+	const bubbleBgColor = fromMe ? "bg-emerald-700" : "";
 
 	const shakeClass = message.shouldShake ? "shake" : "";
   return (

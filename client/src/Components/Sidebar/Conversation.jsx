@@ -12,7 +12,7 @@ const Conversation = ({conversation,lastIdx,emoji}) => {
   return (
 		<>
 			<div className={` Conversation-main 
-				${isSelected? "bg-fuchsia-500":""}`} onClick={()=>setSelectedCovnersation(conversation)}>
+				${isSelected? "bg-emerald-600":""}`} onClick={()=>setSelectedCovnersation(conversation)}>
 				<div className={`avatar ${isOnline ? "online" : ""}`}>
 					<div className='profile-pic'>
 						<img
